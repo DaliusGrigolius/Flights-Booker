@@ -1,0 +1,52 @@
+<header>
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+  >
+    <div class="container">
+      <a class="navbar-brand text-nowrap" [routerLink]="['/']" title="Home">
+        Flights
+        <img src="../../assets/images/airplane_logo.png" height="40"/>
+        Booker
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        title="Menu"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark text-nowrap" [routerLink]="['/']" title="Home">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark text-nowrap" [routerLink]="['/my-booking']" title="My Bookings">
+              <i class="fas fa-ticket"></i>
+              My Bookings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark text-nowrap" [routerLink]="['/register-passenger']" title="Switch Passenger">
+              <i class="fas fa-user-circle"></i>
+              Switch passenger
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
